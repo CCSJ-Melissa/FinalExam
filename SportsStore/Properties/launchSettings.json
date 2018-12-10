@@ -16,9 +16,9 @@
       }
     },
     "SportsStore": {
-      "commandName": "Project",
+      "commandName": "FinalExam",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
+      "applicationUrl": "http://localhost:port/Item/Index",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -13,6 +13,6 @@ namespace SportsStore.Models
         {
             context = ctx;
         }
-        public IQueryable<Item> Products => context.Products;
+        public IQueryable<Item> Items => context.Items;
     }
 }

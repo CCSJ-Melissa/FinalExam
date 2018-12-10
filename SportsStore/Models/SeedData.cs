@@ -15,63 +15,71 @@ namespace SportsStore.Models
         {
             ApplicationDbContext context = app.ApplicationServices.GetRequiredService<ApplicationDbContext>();
             context.Database.Migrate();
-            if (!context.Products.Any())
+            if (!context.Items.Any())
             {
-                context.Products.AddRange(
+                context.Items.AddRange(
                     new Item
                     {
-                        Name = "Kayak", Description = "A boat for one person",
-                        Category = "Watersports", Price = 275
+                        Description = "Antistatic Wipes",
+                        UnitsOnHand = 30,
+                        Cost = 0.15m,
+                        SellingPrice = 0.25m
                     },
                     new Item
                     {
-                        Name = "LIfejacket",
-                        Description = "Protective and fasionable",
-                        Category = "Watersports",
-                        Price = 48.50m
+                        Description = "CD Wallet",
+                        UnitsOnHand = 12,
+                        Cost= 3.45m,
+                        SellingPrice = 4.00m
                     },
                     new Item
                     {
-                        Name = "Soccer Ball",
-                        Description = "FIFA-Approved size and weight",
-                        Category = "Soccer", Price = 19.50m,
+                        Description = "Desktop Holder",
+                        UnitsOnHand = 4,
+                        Cost = 3.85m,
+                        SellingPrice = 4.75m,
                     },
                     new Item
                     {
-                        Name = "Corner Flags",
-                        Description = "Give your playing feild a professional touch",
-                        Category = "Soccer", Price = 34.95m,
+                        Description = "Disks",
+                        UnitsOnHand = 175,
+                        Cost = 0.20m,
+                        SellingPrice = 0.75m,
                     },
                     new Item
                     {
-                        Name = "Stadium",
-                        Description = "Flat-packed 35,000-seat stadium",
-                        Category = "Soccer", Price = 79500,
+                        Description = "Disk Cases",
+                        UnitsOnHand = 12,
+                        Cost = 2.20m,
+                        SellingPrice = 2.75m,
                     },
                     new Item
                     {
-                        Name = "Thinking Cap",
-                        Category = "Chess",
-                        Description = "Improve brain efficiency by 75%", Price = 16
+                        Description = "Mouse Holder",
+                        UnitsOnHand = 10,
+                        Cost = 0.80m,
+                        SellingPrice = 1.00m
                     },
                     new Item
                     {
-                        Name = "Unsteady Chair",
-                        Description = "Secretly give your opponent an unfair advantage",
-                        Category = "Chess",
-                        Price = 29.95m
+                        Description = "Mouse Pad",
+                        UnitsOnHand = 25,
+                        Cost = 2.25m,
+                        SellingPrice = 3.00m
                     },
                     new Item
                     {
-                        Name = "Human Chess Board",
-                        Description = "Fun for the whole family",
-                        Category = "Chess", Price = 75
+                        Description = "PC Tool Kit",
+                        UnitsOnHand = 9,
+                        Cost = 7.80m,
+                        SellingPrice = 9.00m
                     },
                     new Item
                     {
-                        Name = "Bling-Bling King",
-                        Description = "Gold-plated, diamon-studded King",
-                        Category = "Chess", Price = 1200
+                        Description = "Wrist Rest",
+                        UnitsOnHand = 3,
+                        Cost = 2.90m,
+                        SellingPrice = 3.25m
                     }
                     );
                 context.SaveChanges();

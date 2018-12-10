@@ -1,6 +1,7 @@
 ﻿@model CartIndexViewModel
 
 <h2>Your Cart</h2>
+<h1>This is the Index action of the ItemController</h1>
 <table class=" table table-bordered table stripped" >
 	<thead>
 		<tr>
@@ -14,10 +15,10 @@
 		@foreach (var line in Model.Cart.Lines) {
 			<tr>
 				<td class="text-center">@line.Quantity</td>
-				<td class="text-left">@line.Product.Description</td>
-				<td class="text-right">@line.Product.SellingPrice.ToString("c")</td>
+				<td class="text-left">@line.Item.Description</td>
+				<td class="text-right">@line.Item.SellingPrice.ToString("c")</td>
 				<td class="text-right">
-					@((line.Quantity * line.Product.SellingPrice).ToString("c"))
+					@((line.Quantity * line.Item.SellingPrice).ToString("c"))
 				</td>
 			</tr>
 			}
@@ -31,9 +32,8 @@
 		</tr>
 	</tfoot>
 </table>
-
 <div class="text-center">
-			<a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+			<a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping(Return to main page)</a>
 	</div>
 
 
