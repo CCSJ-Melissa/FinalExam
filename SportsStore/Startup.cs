@@ -20,10 +20,10 @@ namespace SportsStore
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-            //    Configuration["Data:SportsStoreItems:ConnectionString"]));
-            //services.AddTransient<IItemRepository, EFItemRepository>();
-            services.AddTransient<IItemRepository, InMemoryItemRepository>();
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+                Configuration["Data:FinalExam:ConnectionString"]));
+            services.AddTransient<IItemRepository, EFItemRepository>();
+            //services.AddTransient<IItemRepository, InMemoryItemRepository>();
             services.AddMvc();
         }
 
@@ -36,7 +36,7 @@ namespace SportsStore
             app.UseMvc(routes => {
             routes.MapRoute(name: null, template: "{controller=Item}/{action=Index}/{id?}");
         });
-            //SeedData.EnsurePopulated(app);
+        SeedData.EnsurePopulated(app);
             
         }
     }
