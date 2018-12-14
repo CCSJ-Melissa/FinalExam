@@ -1,22 +1,32 @@
-﻿@model ItemsListViewModel
+﻿@model IEnumerable<SportsStore.Models.Item>
+<!DOCTYPE>
 
-@foreach (var p in Model.Items)
-{ <div class="card card-outline-primary m-1 p-1">
-	<div class="bg-faded p-1">
-		<h4>
-			@p.Description<span class="badge badge-pill badge-primary" style="float:right">
-				<small>@p.Cost.ToString("c")</small></span>
-			</h4>
-	</div>
-	<div class="card-text p-1">@p.Description</div>
-</div>
-}
+<html>
+<head>
+</head>
+    <body>
+        <h1>This this the Index action of the Item controller</h1>
+        <table>
+            <tr>
+                
+                <th>Description </th>
+                <th>UnitsOnHand</th>
+                <th>Cost</th>
+                <th>SellingPrice</th>
+            </tr>
 
-<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
-	 page-class="btn" page-class-normal="btn-secondary"
-	 page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
-	 class="btn-group pull-right m-1">
+            @foreach (var i in Model)
+            {
+                <tr>
 
-</div>
+                    
+                    <td> @i.Description</td>
+                    <td>@i.UnitsOnHand.ToString("c")</td>
+                    <td>@i.Cost.ToString("c")</td>
+                    <td>@i.SellingPrice.ToString("c")</td>
 
+                </tr>}
+        </table>
+    </body>
 
+</html>
